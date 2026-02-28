@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Palindrome Check</title>
+</head>
+<body>
+    <script type="text/javascript">
+        var str = prompt("Enter a string to check palindrome:");
+        str = str.toLowerCase().replace(/[^a-z0-9]/g, "");
+
+        var len = str.length;
+        var isPalindrome = true;
+
+        for (var i = 0; i < Math.floor(len / 2); i++) {
+            if (str[i] !== str[len - 1 - i]) {
+                isPalindrome = false;
+                break;
+            }
+        }
+
+        if (isPalindrome) {
+            document.writeln("<h2>Yes, it's a palindrome!</h2>");
+        } else {
+            document.writeln("<h2>No, it's not a palindrome.</h2>");
+        }
+    </script>
+</body>
+</html>
